@@ -13,6 +13,8 @@ import { CARRIERS } from '../constants/data';
 import { US_STATES, DENIED_ITEMS } from '../constants/formOptions';
 import { commonItems } from '../../utils/constants';
 import { useRebuttal } from '../../context/RebuttalContext';
+import { Card } from '../../components/Card';
+import type { CommonDenial } from '../../types';
 
 /* ----------------------------------------------------------------------------------
    1) Combined Card Component with optional title prop
@@ -1743,7 +1745,7 @@ don't be a little boss...
   }, {} as Record<string, typeof successfulRebuttals>);
 
   // Helper function to safely get common denials
-  const getCommonDenials = () => {
+  const getCommonDenials = (): Array<{ key: string; label: string }> => {
     try {
       if (!state?.deniedItem) return [];
 
