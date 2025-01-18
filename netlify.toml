@@ -1,0 +1,7 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_SITE_URL = "your-site-url"
+  NODE_VERSION = "18"  # or whatever version you're using 
